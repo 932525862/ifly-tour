@@ -1,39 +1,39 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from "react";
 import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
   FaYoutube,
-} from 'react-icons/fa';
-import { HiBars3 } from 'react-icons/hi2';
-import { IoCloseSharp } from 'react-icons/io5';
-import { MdOutlineLightMode } from 'react-icons/md';
-import { RxLightningBolt } from 'react-icons/rx';
-import LanguageDropdown from '../../dropdownLanguage';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import { toast } from 'react-toastify';
-import toggleModal from '../../toggleModal';
-import { StateContext } from '../../../App';
-import logo from '../../../assets/logo.png';
-import { useTranslation } from 'react-i18next';
+} from "react-icons/fa";
+import {HiBars3} from "react-icons/hi2";
+import {IoCloseSharp} from "react-icons/io5";
+import {MdOutlineLightMode} from "react-icons/md";
+import {RxLightningBolt} from "react-icons/rx";
+import LanguageDropdown from "../../dropdownLanguage";
+import {useForm} from "react-hook-form";
+import axios from "axios";
+import {toast} from "react-toastify";
+import toggleModal from "../../toggleModal";
+import {StateContext} from "../../../App";
+import logo from "../../../assets/logo.png";
+import {useTranslation} from "react-i18next";
 
 const Navbar = () => {
   // language section of state
-  const { t, i18n } = useTranslation();
+  const {t, i18n} = useTranslation();
 
   // language section of state
 
-  const { modalOpen, setModalOpen } = useContext(StateContext);
+  const {modalOpen, setModalOpen} = useContext(StateContext);
   function toggleModal() {
     setModalOpen(!modalOpen);
   }
 
   // Retrieve initial dark mode state from localStorage
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('dark-mode');
-    return savedMode === 'enabled'; // Default to 'false' if not found
+    const savedMode = localStorage.getItem("dark-mode");
+    return savedMode === "enabled"; // Default to 'false' if not found
   });
 
   const [isOpen, setIsOpen] = useState(false);
@@ -56,11 +56,11 @@ const Navbar = () => {
   // Effect to handle local storage and body class
   useEffect(() => {
     if (isDarkMode) {
-      localStorage.setItem('dark-mode', 'enabled');
-      document.body.classList.add('dark');
+      localStorage.setItem("dark-mode", "enabled");
+      document.body.classList.add("dark");
     } else {
-      localStorage.setItem('dark-mode', 'disabled');
-      document.body.classList.remove('dark');
+      localStorage.setItem("dark-mode", "disabled");
+      document.body.classList.remove("dark");
     }
   }, [isDarkMode]);
 
@@ -71,10 +71,10 @@ const Navbar = () => {
       setScrollPosition(position);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -82,8 +82,8 @@ const Navbar = () => {
     <nav
       className={`${
         scrollPosition > 50
-          ? 'backdrop-blur-lg bg-opacity-10 dark:bg-gray-900/30'
-          : ''
+          ? "backdrop-blur-lg bg-opacity-10 dark:bg-gray-900/30"
+          : ""
       } bg-orange-500 dark:bg-gray-900 shadow fixed w-full left-0 z-50 h-16 transition-all duration-300`}
     >
       <div className="container mx-auto px-2">
@@ -97,44 +97,44 @@ const Navbar = () => {
               <a
                 href="#hero"
                 onClick={closeNavbar}
-                className="hover:text-white/50 text-zinc-100 font-medium text-[22px]  duration-500 dark:text-white"
+                className="navbar-item hover:text-white/50 text-zinc-100 font-medium text-[22px] duration-500 dark:text-white"
               >
-                {t('link-1')}
+                {t("link-1")}
               </a>
             </li>
             <li>
               <a
                 href="#tours"
                 onClick={closeNavbar}
-                className="hover:text-white/50 text-zinc-100 font-medium text-[22px]  duration-500 dark:text-white"
+                className="navbar-item hover:text-white/50 text-zinc-100 font-medium text-[22px] duration-500 dark:text-white"
               >
-                {t('link-3')}
+                {t("link-3")}
               </a>
             </li>
             <li>
               <a
                 href="#cite"
                 onClick={closeNavbar}
-                className="hover:text-white/50 text-zinc-100 font-medium text-[22px]  duration-500 dark:text-white"
+                className="navbar-item hover:text-white/50 text-zinc-100 font-medium text-[22px] duration-500 dark:text-white"
               >
-                {t('link-2')}
+                {t("link-2")}
               </a>
             </li>
             <li>
               <a
                 href="#about"
                 onClick={closeNavbar}
-                className="hover:text-white/50 text-zinc-100 font-medium text-[22px]  duration-500 dark:text-white"
+                className="navbar-item hover:text-white/50 text-zinc-100 font-medium text-[22px] duration-500 dark:text-white"
               >
-                {t('link-4')}
+                {t("link-4")}
               </a>
             </li>
             <li>
               <button
                 onClick={toggleModal}
-                className="hover:text-white/50 text-zinc-100 font-medium text-[22px]  duration-500 dark:text-white"
+                className="navbar-item hover:text-white/50 text-zinc-100 font-medium text-[22px] duration-500 dark:text-white"
               >
-                {t('link-5')}
+                {t("link-5")}
               </button>
             </li>
           </ul>
@@ -151,7 +151,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                {' '}
+                {" "}
                 <a
                   href="https://www.twitter.com"
                   target="_blink"
@@ -161,7 +161,7 @@ const Navbar = () => {
                 </a>
               </li>
               <li>
-                {' '}
+                {" "}
                 <a
                   href="https://www.instagram.com"
                   target="_blink"
@@ -224,7 +224,7 @@ const Navbar = () => {
                 href="#hero"
                 className="hover:text-white hover:bg-gray-800 text-white w-full text-2xl duration-700 hover:scale-105 transition-all dark:text-white dark:hover:text-[#007bff]  font-medium px-2 py-3  rounded-md inline-block "
               >
-                {t('link-1')}
+                {t("link-1")}
               </a>
             </li>
             <li className="w-full">
@@ -233,7 +233,7 @@ const Navbar = () => {
                 href="#cite"
                 className="hover:text-white hover:bg-gray-800 text-white w-full text-2xl duration-700 hover:scale-105 transition-all dark:text-white dark:hover:text-[#007bff]  font-medium px-2 py-3  rounded-md inline-block "
               >
-                {t('link-2')}
+                {t("link-2")}
               </a>
             </li>
             <li className="w-full">
@@ -242,7 +242,7 @@ const Navbar = () => {
                 href="#tours"
                 className="hover:text-white hover:bg-gray-800 text-white w-full text-2xl duration-700 hover:scale-105 transition-all dark:text-white dark:hover:text-[#007bff]  font-medium px-2 py-3  rounded-md inline-block "
               >
-                {t('link-3')}
+                {t("link-3")}
               </a>
             </li>
             <li className="w-full">
@@ -251,7 +251,7 @@ const Navbar = () => {
                 href="#about"
                 className="hover:text-white hover:bg-gray-800 text-white w-full text-2xl duration-700 hover:scale-105 transition-all dark:text-white dark:hover:text-[#007bff]  font-medium px-2 py-3  rounded-md inline-block "
               >
-                {t('link-4')}
+                {t("link-4")}
               </a>
             </li>
             <li className="w-full">
@@ -262,7 +262,7 @@ const Navbar = () => {
                 }}
                 className="hover:text-white hover:bg-gray-800 text-white w-full text-2xl duration-700 hover:scale-105 transition-all dark:text-white dark:hover:text-[#007bff]  font-medium px-2 py-3  rounded-md inline-block"
               >
-                {t('link-5')}
+                {t("link-5")}
               </button>
             </li>
           </ul>
