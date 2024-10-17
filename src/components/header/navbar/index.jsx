@@ -93,7 +93,7 @@ const Navbar = () => {
           </a>
 
           <ul className="hidden lg:flex xl:flex 2xl:flex items-center xl:w-[700px] justify-end gap-8">
-            <li>
+            {/* <li>
               <a
                 href="#hero"
                 onClick={closeNavbar}
@@ -101,7 +101,7 @@ const Navbar = () => {
               >
                 {t("link-1")}
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="#tours"
