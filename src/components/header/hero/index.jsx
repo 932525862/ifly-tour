@@ -8,7 +8,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/autoplay';
 
 // Import your images
-import Australia from '../../../assets/a-1.jpeg';
+import Australia from '../../../assets/a-1.jpg';
 import Dubai from '../../../assets/d-1.jpg';
 import Island from '../../../assets/i-1.jpg';
 import LosAngeles from '../../../assets/los-1.jpg';
