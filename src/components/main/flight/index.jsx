@@ -50,7 +50,7 @@ const FlightBookingForm = () => {
       *Qaytish sanasi:* ${returnDate}\n
       *Email:* ${email}\n
       *Telegram Nick:* ${telegramNick || "Yo'q"}\n
-      *Instagram Nick:* ${instagramNick || "Yo'q"}
+    
     `;
 
     try {
@@ -204,18 +204,7 @@ const FlightBookingForm = () => {
                   placeholder={t('count__username_placeholder-4')}
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('count__label-name-11')}
-                </label>
-                <input
-                  type="text"
-                  value={instagramNick}
-                  onChange={(e) => setInstagramNick(e.target.value)}
-                  className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  placeholder={t('count__username_placeholder-5')}
-                />
-              </div>
+              
               <div className="col-span-1 md:col-span-2 lg:col-span-3">
                 <button
                   type="submit"
