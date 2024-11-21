@@ -163,7 +163,7 @@ const Navbar = () => {
               <li>
                 {" "}
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/ifly.com.uz/"
                   target="_blink"
                   className="hover:text-white/50 dark:hover:text-orange-500 text-white duration-500 transition-all ease-linear "
                 >

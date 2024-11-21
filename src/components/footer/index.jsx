@@ -82,7 +82,7 @@ const Footer = () => {
                 <FaTwitter className="h-6 w-6" />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/ifly.com.uz/"
                 target="_blink"
                 className="hover:text-gray-900 duration-500 transition-all ease-linear "
               >
